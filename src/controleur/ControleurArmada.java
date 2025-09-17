@@ -7,6 +7,7 @@ import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
 import modele.Escadron;
+import vue.VueArmada;
 import vue.VueEscadron;
 
 public class ControleurArmada extends Controleur{
@@ -31,6 +32,8 @@ public class ControleurArmada extends Controleur{
 		escadron = new Escadron();
 		escadron.setNom("Pegasus");
 		escadrons.add(escadron);		
+
+		VueArmada.getInstance().afficherEscadrons(escadrons);
 	}	
 
 	// NOTIFICATION = ACTION UTILISATEUR

@@ -4,7 +4,13 @@ public class Escadron {
 	
 	protected int id;
 	protected String nom;
-	
+
+	public Escadron() {
+	}
+
+	public Escadron(String nom) {
+		this.nom = nom;
+	}
 	public int getId() {
 		return id;
 	}

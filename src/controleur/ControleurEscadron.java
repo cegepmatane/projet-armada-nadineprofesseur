@@ -1,5 +1,6 @@
 package controleur;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
@@ -22,6 +23,8 @@ public class ControleurEscadron extends Controleur
 	
 	public void initialiser()
 	{
+		
+		
 	}
 	
 	public ControleurEscadron()
