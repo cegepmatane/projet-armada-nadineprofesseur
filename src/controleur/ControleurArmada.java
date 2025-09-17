@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import donnee.EscadronDAO;
 import modele.Escadron;
 import vue.VueArmada;
 import vue.VueEscadron;
@@ -20,6 +21,13 @@ public class ControleurArmada extends Controleur{
 	public void initialiser()
 	{
 		Logger.logMsg(Logger.INFO, "ControleurArmada.initialiser()");
+		
+		EscadronDAO dao = new EscadronDAO();
+		List<Escadron> escadronsRecus = dao.listerEscadrons();
+		for(Escadron escadron: escadronsRecus)
+		{
+			System.out.println("recu " + escadron.getNom());
+		}
 		
 		List<Escadron> escadrons = new ArrayList<Escadron>();
 		Escadron escadron;
