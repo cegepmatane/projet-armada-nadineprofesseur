@@ -23,12 +23,11 @@ public class ControleurArmada extends Controleur{
 		Logger.logMsg(Logger.INFO, "ControleurArmada.initialiser()");
 		
 		EscadronDAO dao = new EscadronDAO();
-		List<Escadron> escadronsRecus = dao.listerEscadrons();
-		for(Escadron escadron: escadronsRecus)
-		{
+		List<Escadron> escadrons = dao.listerEscadrons();
+		for(Escadron escadron: escadrons) {
 			System.out.println("recu " + escadron.getNom());
 		}
-		
+		/*
 		List<Escadron> escadrons = new ArrayList<Escadron>();
 		Escadron escadron;
 		
@@ -39,7 +38,8 @@ public class ControleurArmada extends Controleur{
 		
 		escadron = new Escadron();
 		escadron.setNom("Pegasus");
-		escadrons.add(escadron);		
+		escadrons.add(escadron);	
+		*/	
 
 		VueArmada.getInstance().afficherEscadrons(escadrons);
 	}	
