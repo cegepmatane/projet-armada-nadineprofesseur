@@ -21,6 +21,7 @@ public class VueAjouterVaisseau extends Vue
 	private VueAjouterVaisseau() {
 		super("ajouter-vaisseau.fxml", VueAjouterVaisseau.class,995,617);
 		Logger.logMsg(Logger.INFO, "new VueAjouterVaisseau()");
+		super.controleur = this.controleur = new ControleurEscadron();
 	}
 	
 	public void activerControles()
@@ -41,6 +42,12 @@ public class VueAjouterVaisseau extends Vue
 		Vaisseau vaisseau = new Vaisseau();
 		TextField champsNom = (TextField)lookup("#nom-vaisseau");
 		vaisseau.setNom(champsNom.getText());
+		TextField champsVitesse = (TextField)lookup("#vitesse-vaisseau");
+		String vitesseEnTexte = champsVitesse.getText();
+		double vitesse = Double.parseDouble(vitesseEnTexte);
+		vaisseau.setVitesse(vitesse);
+		TextField champsValeur = (TextField)lookup("#valeur-vaisseau");
+		vaisseau.setValeur(Double.parseDouble(champsValeur.getText()));
 		
 		return vaisseau;
 	}

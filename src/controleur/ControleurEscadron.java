@@ -64,6 +64,10 @@ public class ControleurEscadron extends Controleur
 	public void reagirClicEnregistrerAjoutVaisseau()
 	{
 		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicEnregistrerAjouterVaisseau()");
+		Vaisseau vaisseau = VueAjouterVaisseau.getInstance().lireVaisseau();
+		System.out.println("Vaisseau du formulaire : " + vaisseau.getNom());
+		System.out.println("Valeur : " + vaisseau.getValeur());
+		System.out.println("Vitesse : " + vaisseau.getVitesse());
 	}
 	
 	protected Vaisseau vaisseau;
