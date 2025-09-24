@@ -6,11 +6,13 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import architecture.Navigateur;
 import donnee.VaisseauDAO;
 import javafx.scene.control.TextField;
 import donnee.EscadronDAO;
 import modele.Vaisseau;
 import modele.Escadron;
+import vue.VueAjouterVaisseau;
 import vue.VueEditerVaisseau;
 import vue.VueEscadron;
 
@@ -55,17 +57,20 @@ public class ControleurEscadron extends Controleur
 	public void reagirClicAjouterVaisseau()
 	{
 		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicAjouterVaisseau()");
+		Navigateur.getInstance().afficherVue(VueAjouterVaisseau.getInstance());
+		
 	}
 	
 	public void reagirClicEnregistrerAjoutVaisseau()
 	{
-		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicEnregistrerAjoutVaisseau()");
+		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicEnregistrerAjouterVaisseau()");
 	}
 	
 	protected Vaisseau vaisseau;
 	public void reagirClicEditerVaisseau(int id)
 	{
 		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicEditerVaisseau()");
+		
 	}
 	public void reagirClicEnregistrerEditerVaisseau()
 	{
