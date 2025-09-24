@@ -23,8 +23,9 @@ public class ControleurEscadron extends Controleur
 	
 	public void initialiser()
 	{
-		
-		
+		EscadronDAO dao = new EscadronDAO();
+		Escadron escadron = dao.detaillerEscadron(2);
+		System.out.println("Escadron : " + escadron.getNom());
 	}
 	
 	public ControleurEscadron()

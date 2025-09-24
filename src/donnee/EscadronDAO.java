@@ -41,11 +41,26 @@ public class EscadronDAO {
 		return escadrons;
 	}
 	
-	public Escadron detaillerEscadron(int id)
+	public Escadron detaillerEscadron(int idRecu)
 	{
 		Logger.logMsg(Logger.INFO, "EscadronDAO.detaillerEscadron()");
 		Escadron escadron = new Escadron();
 		
+		try {
+			Connection connexion = 	BaseDeDonnees.getInstance().getConnexion();
+			Statement requete = connexion.createStatement();
+			ResultSet curseur = requete.executeQuery("SELECT * FROM escadron WHERE id = " + idRecu);
+			
+			curseur.next();
+			String nom = curseur.getString("nom");
+			//System.out.println(nom);
+			escadron.setNom(nom);
+			int id = curseur.getInt("id");
+			escadron.setId(id);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		return escadron;
 	}

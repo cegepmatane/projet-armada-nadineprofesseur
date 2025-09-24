@@ -7,8 +7,8 @@ import vue.VueEscadron;
 public class App {
 
 	public static void main(String[] parametres) {
-		Controleur.choisirVuePrincipale(VueArmada.class);
-		//Controleur.choisirVuePrincipale(VueEscadron.class);
+		//Controleur.choisirVuePrincipale(VueArmada.class);
+		Controleur.choisirVuePrincipale(VueEscadron.class);
 		Fenetre.launch(Fenetre.class, parametres);	
 	}
 
