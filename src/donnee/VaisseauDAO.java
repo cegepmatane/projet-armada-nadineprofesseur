@@ -30,8 +30,20 @@ public class VaisseauDAO {
 			
 			while(curseur.next())
 			{
+				int id = curseur.getInt("id");
 				String nom = curseur.getString("nom");
-				System.out.println(nom);
+				double valeur = curseur.getDouble("valeur");
+				double vitesse = curseur.getDouble("vitesse");
+				
+				//System.out.println(nom);
+				Vaisseau vaisseau = new Vaisseau();
+				vaisseau.setNom(nom);
+				vaisseau.setValeur(valeur);
+				vaisseau.setVitesse(vitesse);
+				vaisseau.setIdEscadron(idEscadron);
+				vaisseau.setId(id);
+				
+				vaisseaux.add(vaisseau);
 			}
 			
 		} catch (Exception e) {

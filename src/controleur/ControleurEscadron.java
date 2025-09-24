@@ -25,12 +25,16 @@ public class ControleurEscadron extends Controleur
 	public void initialiser()
 	{
 		EscadronDAO escadronDao = new EscadronDAO();
-		Escadron escadron = escadronDao.detaillerEscadron(2);
+		escadron = escadronDao.detaillerEscadron(2);
 		System.out.println("Escadron : " + escadron.getNom());
 		VueEscadron.getInstance().afficherEscadron(escadron);
 	
 		VaisseauDAO vaisseauDao = new VaisseauDAO();
-		vaisseauDao.listerVaisseauxParEscadron(2);
+		vaisseaux = vaisseauDao.listerVaisseauxParEscadron(2);
+		for(Vaisseau vaisseau:vaisseaux)
+		{
+			System.out.println("Vaisseau : " + vaisseau.getNom() + " (" + vaisseau.getVitesse() + ")");
+		}
 	
 	}
 	
