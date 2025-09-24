@@ -35,6 +35,7 @@ public class ControleurEscadron extends Controleur
 		{
 			System.out.println("Vaisseau : " + vaisseau.getNom() + " (" + vaisseau.getVitesse() + ")");
 		}
+		VueEscadron.getInstance().afficherVaisseaux(vaisseaux);
 	
 	}
 	
