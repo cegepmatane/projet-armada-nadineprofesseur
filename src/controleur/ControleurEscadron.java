@@ -67,6 +67,7 @@ public class ControleurEscadron extends Controleur
 	{
 		Logger.logMsg(Logger.INFO, "ControleurEscadron.reagirClicEnregistrerAjouterVaisseau()");
 		Vaisseau vaisseau = VueAjouterVaisseau.getInstance().lireVaisseau();
+		vaisseau.setIdEscadron(2);
 		//System.out.println("Vaisseau du formulaire : " + vaisseau.getNom());
 		//System.out.println("Valeur : " + vaisseau.getValeur());
 		//System.out.println("Vitesse : " + vaisseau.getVitesse());
@@ -79,6 +80,11 @@ public class ControleurEscadron extends Controleur
 		
 		VaisseauDAO vaisseauDao = new VaisseauDAO();
 		vaisseauDao.ajouterVaisseau(vaisseau);
+		
+		
+		VueEscadron.getInstance().afficherVaisseaux(vaisseauDAO.listerVaisseauxParEscadron(2));
+		Navigateur.getInstance().afficherVue(VueEscadron.getInstance());
+		// pourrait rafraichir la liste de la vue - pas oblige
 		
 	}
 	
