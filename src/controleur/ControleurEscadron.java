@@ -12,6 +12,7 @@ import donnee.EscadronDAO;
 import modele.Vaisseau;
 import modele.Escadron;
 import vue.VueEditerVaisseau;
+import vue.VueEscadron;
 
 public class ControleurEscadron extends Controleur
 {
@@ -26,6 +27,7 @@ public class ControleurEscadron extends Controleur
 		EscadronDAO dao = new EscadronDAO();
 		Escadron escadron = dao.detaillerEscadron(2);
 		System.out.println("Escadron : " + escadron.getNom());
+		VueEscadron.getInstance().afficherEscadron(escadron);
 	}
 	
 	public ControleurEscadron()
