@@ -56,7 +56,19 @@ public class VaisseauDAO {
 	
 	public void ajouterVaisseau(Vaisseau vaisseau)
 	{
+		
+		//String SQL_AJOUTER_VAISSEAU = "INSERT INTO vaisseau(nom, id_escadron) VALUES('test', 2)";
+		String SQL_AJOUTER_VAISSEAU = "INSERT INTO vaisseau(nom, valeur, vitesse, id_escadron) VALUES('"+vaisseau.getNom()+"', "+ vaisseau.getValeur()+" , "+vaisseau.getVitesse()+" ,"+vaisseau.getIdEscadron()+")";
+		//String SQL_AJOUTER_VAISSEAU = "INSERT INTO vaisseau(nom, id_escadron) VALUES(?, ?)";
 		Logger.logMsg(Logger.INFO, "VaisseauDAO.ajouterVaisseau()");
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			Statement requete = connexion.createStatement();
+			requete.execute(SQL_AJOUTER_VAISSEAU);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void editerVaisseau(Vaisseau vaisseau) {
